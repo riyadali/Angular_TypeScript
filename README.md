@@ -103,3 +103,19 @@ _ Key Components
         }
 
       }
+      
+  + You always import the Component symbol from the Angular core library and annotate the component class with @Component.
+
+    + @Component is a decorator function that specifies the Angular metadata for the component.
+    
+  + Three metadata properties are specified in the file above:
+
+    + selector— the component's CSS element selector
+    + templateUrl— the location of the component's template file.
+    + styleUrls— the location of the component's private CSS styles.
+    
+  + The CSS element selector, 'app-heroes', matches the name of the HTML element that identifies this component within a parent component's template.
+
+  + The ngOnInit is a lifecycle hook. Angular calls ngOnInit shortly after creating a component. It's a good place to put initialization logic.
+
+  + Always export the component class so you can import it elsewhere ... like in the AppModule

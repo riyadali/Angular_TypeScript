@@ -26,3 +26,27 @@ _ Key aspects of Angular
   + Asynchronous template compilation
   + Replacing controllers and $scope with components and directives – a component is a directive with a template
   + Iterative callbacks provided by RxJS. RxJS limits state visibility and debugging, but these can be solved with reactive add-ons like ngReact or ngrx.
+  
+
+_ Key Components
+
+  + The application shell is the first page you see and it is controlled by an Angular component named AppComponent (in src/app folder). You'll find the implementation of the shell AppComponent distributed over three files:
+
+    + app.component.ts— the component class code, written in TypeScript. Sample compnent file follows
+    
+        import { Component } from '@angular/core';
+
+        @Component({
+        
+            selector: 'app-root',
+            templateUrl: './app.component.html',
+            styleUrls: ['./app.component.css']
+        })
+        
+        export class AppComponent {
+        
+            title = 'Tour of Heroes';
+        }
+    + app.component.html— the component template, written in HTML.
+    + app.component.css— the component's private CSS styles.
+

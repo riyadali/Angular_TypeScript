@@ -84,3 +84,22 @@ _ Key Components
             font-family: Arial, Helvetica, sans-serif;
         }
 
+  + Individual components are stored in their own folder (ex. app/heroes).  This folder will contain three files the css, html and ts file corresponding to the style, template and class (typescript) files.  A typical class file is as follows:
+  
+      import { Component, OnInit } from '@angular/core';
+
+      @Component({
+      
+        selector: 'app-heroes',
+        templateUrl: './heroes.component.html',
+        styleUrls: ['./heroes.component.css']
+      })
+      
+      export class HeroesComponent implements OnInit {
+
+        constructor() { }
+
+        ngOnInit() {
+        }
+
+      }

@@ -222,4 +222,33 @@ _ Key Components
     &lt;/div&gt;
         
   + [(ngModel)] is Angular's two-way data binding syntax.  Here it binds the hero.name property to the HTML textbox so that data can flow in both directions: from the hero.name property to the textbox, and from the textbox back to the hero.name.
+  
+  + Notice that the app stopped working when you added [(ngModel)].  To see the error, open the browser development tools and look in the console for a message like
+
+      Template parse errors:
+      
+        Can't bind to 'ngModel' since it isn't a known property of 'input'.
+        
+  + Although ngModel is a valid Angular directive, it isn't available by default.  It belongs to the optional FormsModule and you must opt-in to using it.
+  
+  + AppModule -- Angular needs to know how the pieces of your application fit together and what other files and libraries the app requires. This information is called metadata.  Some of the metadata is in the @Component decorators that you added to your component classes. Other critical metadata is in @NgModule decorators.  The most important @NgModuledecorator annotates the top-level AppModule class which can be found in src/app/app.module.ts. This is where you opt-in to the FormsModule.
+  
+  + Import FormsModule.  Open AppModule (app.module.ts) and import the FormsModule symbol from the @angular/forms library.
+
+    app.module.ts (FormsModule symbol import)
+
+      import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+      
+  + Then add FormsModule to the @NgModule metadata's imports array, which contains a list of external modules that the app needs.
+
+    app.module.ts ( @NgModule imports)
+
+      imports: [
+      
+        BrowserModule,
+        FormsModule
+        
+      ],
+
+  + When the browser refreshes, the app should work again. You can edit the hero's name and see the changes reflected immediately in the &lt;h2&gt; above the textbox.
 

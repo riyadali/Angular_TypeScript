@@ -186,4 +186,22 @@ _ Key Components
     }
   
   + The page no longer displays properly because you changed the hero from a string to an object.
+  
+  + Show the hero object.  Update the binding in the template to announce the hero's name and show both id and name in a details layout like this:
+
+    heroes.component.html (HeroesComponent's template)
+
+     &lt;h2&gt;{{ hero.name }} Details &lt;/h2&gt;
+     
+     &lt;div&gt; &lt;span&gt;id:  &lt;/span&gt;{{hero.id}} &lt;/div&gt;
+     
+     &lt;div&gt; &lt;span&gt;name:  &lt;/span&gt;{{hero.name}} &lt;/div&gt;
+    
+  + The browser refreshes and display's the hero's information.
+  
+  + Format with the UppercasePipe.  Modify the hero.name binding like this.
+
+    &lt;h2&gt;{{ hero.name | uppercase }} Details&lt;/h2&gt;
+
+  + The browser refreshes and now the hero's name is displayed in capital letters. The word uppercase in the interpolation binding, right after the pipe operator ( | ), activates the built-in UppercasePipe.  Pipes are a good way to format strings, currency amounts, dates and other display data. Angular ships with several built-in pipes and you can create your own.
 

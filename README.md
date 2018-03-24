@@ -119,3 +119,24 @@ _ Key Components
   + The ngOnInit is a lifecycle hook. Angular calls ngOnInit shortly after creating a component. It's a good place to put initialization logic.
 
   + Always export the component class so you can import it elsewhere ... like in the AppModule
+  
+  + Add a hero property to the HeroesComponent for a hero named "Windstorm."
+
+      + heroes.component.ts (hero property)
+
+        + hero = 'Windstorm';
+        
+  + Show the hero. Open the heroes.component.html template file. Add data (for example to a header statement) binding to the new hero property.
+
+    heroes.component.html
+
+      My Heroes {{hero}}
+      
+  + Show the HeroesComponent view. To display the HeroesComponent, you must add it to the template of the shell AppComponent. Remember that app-heroes is the element selector for the HeroesComponent. So add an &lt;app-heroes&gt; element to the AppComponent template file, just below the title.
+
+    src/app/app.component.html
+
+    &lt;h1&gt;{{title}}&lt;/h1&gt;
+    
+      &lt;app-heroes&gt;&lt;/app-heroes&gt;
+

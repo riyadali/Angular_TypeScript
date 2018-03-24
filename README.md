@@ -204,4 +204,22 @@ _ Key Components
     &lt;h2&gt;{{ hero.name | uppercase }} Details&lt;/h2&gt;
 
   + The browser refreshes and now the hero's name is displayed in capital letters. The word uppercase in the interpolation binding, right after the pipe operator ( | ), activates the built-in UppercasePipe.  Pipes are a good way to format strings, currency amounts, dates and other display data. Angular ships with several built-in pipes and you can create your own.
+  
+  + Edit the hero.  Users should be able to edit the hero name in an &lt;input&gt; textbox.  The textbox should both display the hero's name property and update that property as the user types. That means data flow from the component class out to the screen and from the screen back to the class.  To automate that data flow, setup a two-way data binding between the &lt;input&gt; form element and the hero.name property.
+
+  + Two-way binding.  Refactor the details area in the HeroesComponent template so it looks like this:
+
+    src/app/heroes/heroes.component.html (HeroesComponent's template)
+
+    &lt;div&gt;
+        
+       &lt;label&gt;name:
+       
+       &lt;input [(ngModel)]="hero.name" placeholder="name"&gt;
+         
+       &lt;/label&gt;
+       
+    &lt;/div&gt;
+        
+  + [(ngModel)] is Angular's two-way data binding syntax.  Here it binds the hero.name property to the HTML textbox so that data can flow in both directions: from the hero.name property to the textbox, and from the textbox back to the hero.name.
 

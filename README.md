@@ -139,4 +139,51 @@ _ Key Components
     &lt;h1&gt;{{title}}&lt;/h1&gt;
     
       &lt;app-heroes&gt;&lt;/app-heroes&gt;
+      
+  + Create a Hero class.  A real hero is more than a name. Create a Hero class in its own file in the src/app folder. Give it id and name properties.
+
+    src/app/hero.ts
+
+    export class Hero {
+    
+      id: number;
+      name: string;
+      
+    }
+    
+  + Return to the HeroesComponent class and import the Hero class. Refactor the component's hero property to be of type Hero. Initialize it with an id of 1 and the name Windstorm.
+
+  + The revised HeroesComponent class file should look like this:
+
+    src/app/heroes/heroes.component.ts
+
+      import { Component, OnInit } from '@angular/core';
+      
+      import { Hero } from '../hero';
+
+      @Component({
+      
+          selector: 'app-heroes',
+          templateUrl: './heroes.component.html',
+          styleUrls: ['./heroes.component.css']
+          
+      })
+      
+      export class HeroesComponent implements OnInit {
+      
+        hero: Hero = {
+        id: 1,
+        name: 'Windstorm'
+        
+      };
+
+      constructor() { }
+
+      ngOnInit() {
+    
+      }
+
+    }
+  
+  + The page no longer displays properly because you changed the hero from a string to an object.
 

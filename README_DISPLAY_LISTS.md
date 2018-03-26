@@ -43,13 +43,13 @@ _ Displaying heroes.  You're about to display the list of heroes at the top of t
 
       heroes = HEROES;
       
-_ List heroes with *ngFor:
-  + Open the HeroesComponent template file and make the following changes: 
-    + Add an &lt;h2&gt; at the top,
-    + Below it add an HTML unordered list (&lt;ul&gt;)
-    + Insert an &lt;li&gt; within the &lt;ul&gt; that displays properties of a hero.
-    + Sprinkle some CSS classes for styling (you'll add the CSS styles shortly).
-  + Make it look like this:
+  + List heroes with *ngFor:
+    + Open the HeroesComponent template file and make the following changes: 
+      + Add an &lt;h2&gt; at the top,
+      + Below it add an HTML unordered list (&lt;ul&gt;)
+      + Insert an &lt;li&gt; within the &lt;ul&gt; that displays properties of a hero.
+      + Sprinkle some CSS classes for styling (you'll add the CSS styles shortly).
+    + Make it look like this:
 
     heroes.component.html (heroes template)
 
@@ -65,22 +65,22 @@ _ List heroes with *ngFor:
         
       &lt;/ul&gt;
       
-  + Now change the &lt;li&gt; to this:
+    + Now change the &lt;li&gt; to this:
   
       &lt;li *ngFor="let hero of heroes"&gt;
       
-  + The *ngFor is Angular's repeater directive. It repeats the host element for each element in a list.  In this example
+    + The *ngFor is Angular's repeater directive. It repeats the host element for each element in a list.  In this example
 
-    + &lt;li&gt; is the host element
-    + heroes is the list from the HeroesComponent class.
-    + hero holds the current hero object for each iteration through the list.
+      + &lt;li&gt; is the host element
+      + heroes is the list from the HeroesComponent class.
+      + hero holds the current hero object for each iteration through the list.
     
-  + Don't forget the asterisk (*) in front of ngFor. It's a critical part of the syntax.  After the browser refreshes, the list of heroes appears.
+    + Don't forget the asterisk (*) in front of ngFor. It's a critical part of the syntax.  After the browser refreshes, the list of heroes appears.
   
-_ Style the heroes.  The heroes list should be attractive and should respond visually when users hover over and select a hero from the list. In the first tutorial, you set the basic styles for the entire application in styles.css. That stylesheet didn't include styles for this list of heroes.  You could add more styles to styles.css and keep growing that stylesheet as you add components.  You may prefer instead to define private styles for a specific component and keep everything a component needs— the code, the HTML, and the CSS —together in one place. This approach makes it easier to re-use the component somewhere else and deliver the component's intended appearance even if the global styles are different.
+  + Style the heroes.  The heroes list should be attractive and should respond visually when users hover over and select a hero from the list. In the first tutorial, you set the basic styles for the entire application in styles.css. That stylesheet didn't include styles for this list of heroes.  You could add more styles to styles.css and keep growing that stylesheet as you add components.  You may prefer instead to define private styles for a specific component and keep everything a component needs— the code, the HTML, and the CSS —together in one place. This approach makes it easier to re-use the component somewhere else and deliver the component's intended appearance even if the global styles are different.
 
-  + You define private styles either inline in the @Component.styles array or as stylesheet file(s) identified in the @Component.styleUrls array.
-  + When the CLI generated the HeroesComponent, it created an empty heroes.component.css stylesheet for the HeroesComponent and pointed to it in @Component.styleUrls like this.
+    + You define private styles either inline in the @Component.styles array or as stylesheet file(s) identified in the @Component.styleUrls array.
+    + When the CLI generated the HeroesComponent, it created an empty heroes.component.css stylesheet for the HeroesComponent and pointed to it in @Component.styleUrls like this.
   
     src/app/heroes/heroes.component.ts (@Component)
 
@@ -161,4 +161,8 @@ _ Style the heroes.  The heroes list should be attractive and should respond vis
   
     }
     
-  + Styles and stylesheets identified in @Component metadata are scoped to that specific component. The heroes.component.css styles apply only to the HeroesComponent and don't affect the outer HTML or the HTML in any other component.
+    + Styles and stylesheets identified in @Component metadata are scoped to that specific component. The heroes.component.css styles apply only to the HeroesComponent and don't affect the outer HTML or the HTML in any other component.
+  
+_ Master/Detail. When the user clicks a hero in the master list, the component should display the selected hero's details at the bottom of the page.
+
+In this section, you'll listen for the hero item click event and update the hero detail.

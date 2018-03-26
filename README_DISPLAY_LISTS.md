@@ -140,25 +140,25 @@ _ Displaying heroes.  You're about to display the list of heroes at the top of t
       
       .heroes .text {
       
-        position: relative;
-        top: -3px;
+          position: relative;
+          top: -3px;
         
       }
       
       .heroes .badge {
       
-        display: inline-block;
-        font-size: small;
-        color: white;
-        padding: 0.8em 0.7em 0 0.7em;
-        background-color: #607D8B;
-        line-height: 1em;
-        position: relative;
-        left: -1px;
-        top: -4px;
-        height: 1.8em;
-        margin-right: .8em;
-        border-radius: 4px 0 0 4px;
+          display: inline-block;
+          font-size: small;
+          color: white;
+          padding: 0.8em 0.7em 0 0.7em;
+          background-color: #607D8B;
+          line-height: 1em;
+          position: relative;
+          left: -1px;
+          top: -4px;
+          height: 1.8em;
+          margin-right: .8em;
+          border-radius: 4px 0 0 4px;
   
     }
     

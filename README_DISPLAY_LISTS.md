@@ -44,28 +44,3 @@ _ Displaying heroes.  You're about to display the list of heroes at the top of t
       heroes = HEROES;
       
 _ List heroes with *ngFor:
-    + Open the HeroesComponent template file and make the following changes:    
-      + Add an <h2> at the top,
-      + Below it add an HTML unordered list (<ul>)
-      + Insert an <li> within the <ul> that displays properties of a hero.
-      + Sprinkle some CSS classes for styling (you'll add the CSS styles shortly).
-    + Make it look like this:
-
-        heroes.component.html (heroes template)
-
-            <h2>My Heroes</h2>
-            <ul class="heroes">
-              <li>
-                  <span class="badge">{{hero.id}}</span> {{hero.name}}
-              </li>
-            </ul>
-            
-    + Now change the <li> to this:
-
-            <li *ngFor="let hero of heroes">
-            
-    + The *ngFor is Angular's repeater directive. It repeats the host element for each element in a list. In this example
-      + <li> is the host element
-      + heroes is the list from the HeroesComponent class.
-      + hero holds the current hero object for each iteration through the list.
-    + Don't forget the asterisk (*) in front of ngFor. It's a critical part of the syntax. After the browser refreshes, the list of heroes appears.  

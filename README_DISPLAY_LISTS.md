@@ -57,12 +57,12 @@ _ List heroes with *ngFor:
       
       &lt;ul class="heroes"&gt;
       
-        &lt;li&gt;
+       &lt;li&gt;
         
-          &lt;span class="badge">{{hero.id}}&lt;/span&gt; {{hero.name}}
+       &lt;span class="badge">{{hero.id}}&lt;/span&gt; {{hero.name}}
           
-        &lt;/li&gt;
+       &lt;/li&gt;
         
-      &lt;/ul2&gt;
+      &lt;/ul&gt;
       
   + Now change the &lt;li&gt; to this:

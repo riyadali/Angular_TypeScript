@@ -144,6 +144,7 @@ _ Displaying heroes.  You're about to display the list of heroes at the top of t
         top: -3px;
         
       }
+      
       .heroes .badge {
       
         display: inline-block;

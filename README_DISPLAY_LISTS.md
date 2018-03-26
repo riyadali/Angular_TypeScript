@@ -82,13 +82,13 @@ _ Displaying heroes.  You're about to display the list of heroes at the top of t
     + You define private styles either inline in the @Component.styles array or as stylesheet file(s) identified in the @Component.styleUrls array.
     + When the CLI generated the HeroesComponent, it created an empty heroes.component.css stylesheet for the HeroesComponent and pointed to it in @Component.styleUrls like this.
   
-    src/app/heroes/heroes.component.ts (@Component)
+        src/app/heroes/heroes.component.ts (@Component)
 
-        @Component({
-            selector: 'app-heroes',
-            templateUrl: './heroes.component.html',
-            styleUrls: ['./heroes.component.css']
-        })
+            @Component({
+                selector: 'app-heroes',
+                templateUrl: './heroes.component.html',
+                styleUrls: ['./heroes.component.css']
+            })
         
     + Open the heroes.component.css file and use reasonable styles as follows:
   

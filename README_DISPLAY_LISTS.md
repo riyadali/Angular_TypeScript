@@ -44,6 +44,8 @@ _ Displaying heroes.  You're about to display the list of heroes at the top of t
       heroes = HEROES;
       
 _ List heroes with *ngFor:
-  + Open the HeroesComponent template file and make the following changes:    
+  + Open the HeroesComponent template file and make the following changes: 
+    + Add an &lt;h2&gt; at the top,
+    + Below it add an HTML unordered list (&lt;ul&gt;)
     + Insert an &lt;li&gt; within the &lt;ul&gt; that displays properties of a hero.
     + Sprinkle some CSS classes for styling (you'll add the CSS styles shortly).

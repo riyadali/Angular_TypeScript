@@ -66,3 +66,13 @@ _ List heroes with *ngFor:
       &lt;/ul&gt;
       
   + Now change the &lt;li&gt; to this:
+  
+      &lt;li *ngFor="let hero of heroes"&gt;
+      
+  + The *ngFor is Angular's repeater directive. It repeats the host element for each element in a list.  In this example
+
+    + &lt;li&gt; is the host element
+    + heroes is the list from the HeroesComponent class.
+    + hero holds the current hero object for each iteration through the list.
+    
+  + Don't forget the asterisk (*) in front of ngFor. It's a critical part of the syntax.  After the browser refreshes, the list of heroes appears.

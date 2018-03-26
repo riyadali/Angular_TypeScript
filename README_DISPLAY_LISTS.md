@@ -184,7 +184,7 @@ _ Master/Detail. When the user clicks a hero in the master list, the component s
 
         heroes.component.html (selected hero details)
 
-          &lt;h2&gt;{{ selectedHero.name | uppercase }} Details&lt;/h2&gt;>
+         &lt;h2&gt;{{ selectedHero.name | uppercase }} Details&lt;/h2&gt;>
               &lt;div&gt;&lt;span&gt;id: &lt;/span&gt;{{selectedHero.id}}&lt;/div&gt;
               &lt;div&gt;
                   &lt;label&gt;name:

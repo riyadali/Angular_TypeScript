@@ -233,3 +233,25 @@ _ Master/Detail. When the user clicks a hero in the master list, the component s
         + After the browser refreshes, the list of names reappears. The details area is blank. Click a hero and its details appear.
         
     + Why it works. When selectedHero is undefined, the ngIf removes the hero detail from the DOM. There are no selectedHero bindings to worry about.  When the user picks a hero, selectedHero has a value and ngIf puts the hero detail into the DOM.
+    
+  + Style the selected hero. It's difficult to identify the selected hero in the list when all &lt;li&gt; elements look alike. If the user clicks "Magneta", that hero should render with a distinctive but subtle background color. The selected hero coloring is the work of the .selected CSS class in the styles you added earlier. You just have to apply the .selected class to the &lt;li&gt; when the user clicks it.  The Angular class binding makes it easy to add and remove a CSS class conditionally. Just add [class.some-css-class]="some-condition" to the element you want to style.
+
+    + Add the following [class.selected] binding to the &lt;li&gt; in the HeroesComponent template:
+
+        heroes.component.html (toggle the 'selected' CSS class)
+
+          [class.selected]="hero === selectedHero"
+          
+    + When the current row hero is the same as the selectedHero, Angular adds the selected CSS class. When the two heroes are different, Angular removes the class. The finished &lt;li&gt; looks like this:
+
+      heroes.component.html (list item hero)
+
+        &lt;li *ngFor="let hero of heroes" &gt;
+        
+        [class.selected]="hero === selectedHero"
+        
+        (click)="onSelect(hero)">
+        
+        &lt;span class="badge">{{hero.id}}&lt;/span&gt; {{hero.name}}
+        
+        &lt;/li&gt;

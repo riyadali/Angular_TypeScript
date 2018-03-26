@@ -1,3 +1,13 @@
+# Angular_TypeScript
+Repository for all things Angular.  This is basically a starting point for all resources related to Angular 2 and above (i.e. TypeScript version of Angular)
+
+_ A good starting point may be this tutorial https://angular.io/tutorial (you can interactively edit it and see what happens)
+
+_ Key aspects of Angular
+
+  + Angular does not have a concept of "scope" or controllers, instead it uses a hierarchy of components as its primary architectural characteristic.
+  + Angular has a different expression syntax, focusing on "[ ]" for property binding, and "( )" for event binding
+  + Modularity 
 # Display a list of heroes
 In this page, you'll display a list of heroes, and allow users to select a hero and display the hero's details.
 _ Create mock heroes.  You'll need some heroes to display.  Eventually you'll get them from a remote data server. For now, 

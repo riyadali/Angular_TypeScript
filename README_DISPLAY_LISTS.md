@@ -184,13 +184,19 @@ _ Master/Detail. When the user clicks a hero in the master list, the component s
 
         heroes.component.html (selected hero details)
 
-         &lt;h2&gt;{{ selectedHero.name | uppercase }} Details&lt;/h2&gt;>
-              &lt;div&gt;&lt;span&gt;id: &lt;/span&gt;{{selectedHero.id}}&lt;/div&gt;
-              &lt;div&gt;
-                  &lt;label&gt;name:
-                      &lt;input [(ngModel)]="selectedHero.name" placeholder="name"&gt;
-                  &lt;/label&gt;
-              &lt;/div&gt;
+         &lt;h2&gt;{{ selectedHero.name | uppercase }} Details&lt;/h2&gt;
+         
+         &lt;div&gt;&lt;span&gt;id: &lt;/span&gt;{{selectedHero.id}}&lt;/div&gt;
+         
+         &lt;div&gt;
+         
+         &lt;label&gt;name:
+         
+         &lt;input [(ngModel)]="selectedHero.name" placeholder="name"&gt;
+         
+         &lt;/label&gt;
+         
+         &lt;/div&gt;
               
   + Hide empty details with *ngIf.  After the browser refreshes, the application is broken.
       + Open the browser developer tools and look in the console for an error message like this:
@@ -206,16 +212,22 @@ _ Master/Detail. When the user clicks a hero in the master list, the component s
         
             src/app/heroes/heroes.component.html (*ngIf)
 
-              &lt;div *ngIf="selectedHero"&gt;
+             &lt;div *ngIf="selectedHero"&gt;
 
-                  &lt;h2&gt;{{ selectedHero.name | uppercase }} Details&lt;/h2&gt;
-                  &lt;div&gt;&lt;span&gt;id: &lt;/span&gt;{{selectedHero.id}}&lt;/div&gt;
-                  &lt;div&gt;
-                      &lt;label&gt;name:
-                      &lt;input&gt; [(ngModel)]="selectedHero.name" placeholder="name"&gt;
-                      &lt;/label&gt;
-                  &lt;/div&gt;
+             &lt;h2&gt;{{ selectedHero.name | uppercase }} Details&lt;/h2&gt;
+             
+             &lt;div&gt;&lt;span&gt;id: &lt;/span&gt;{{selectedHero.id}}&lt;/div&gt;
+                  
+             &lt;div&gt;
+                  
+             &lt;label&gt;name:
+                      
+             &lt;input&gt; [(ngModel)]="selectedHero.name" placeholder="name"&gt;
+                      
+             &lt;/label&gt;
+                      
+             &lt;/div&gt;
 
-              &lt;/div&gt;
+             &lt;/div&gt;
               
         + After the browser refreshes, the list of names reappears. The details area is blank. Click a hero and its details appear.

@@ -164,6 +164,37 @@ _ Displaying heroes.  You're about to display the list of heroes at the top of t
     
     + Styles and stylesheets identified in @Component metadata are scoped to that specific component. The heroes.component.css styles apply only to the HeroesComponent and don't affect the outer HTML or the HTML in any other component.
   
-_ Master/Detail. When the user clicks a hero in the master list, the component should display the selected hero's details at the bottom of the page.
+_ Master/Detail. When the user clicks a hero in the master list, the component should display the selected hero's details at the bottom of the page. In this section, you'll listen for the hero item click event and update the hero detail.
 
-In this section, you'll listen for the hero item click event and update the hero detail.
+  + Add the click event handler. Rename the component's hero property to selectedHero but don't assign it. There is no selected hero when the application starts.
+    + Add the following onSelect() method, which assigns the clicked hero from the template to the component's selectedHero.
+
+        src/app/heroes/heroes.component.ts (onSelect)
+
+            selectedHero: Hero;
+
+            onSelect(hero: Hero): void {
+            
+                this.selectedHero = hero;
+                
+            }
+            
+  + Update the details template. The template still refers to the component's old hero property which no longer exists. 
+    + Rename hero to selectedHero.
+
+        heroes.component.html (selected hero details)
+
+          &lt;h2&gt;{{ selectedHero.name | uppercase }} Details&lt;/h2&gt;>
+              &lt;div&gt;&lt;span&gt;id: &lt;/span&gt;{{selectedHero.id}}&lt;/div&gt;
+              &lt;div&gt;
+                  &lt;label&gt;name:
+                      &lt;input [(ngModel)]="selectedHero.name" placeholder="name"&gt;
+                  &lt;/label&gt;
+              &lt;/div&gt;
+              
+  + Hide empty details with *ngIf.  After the browser refreshes, the application is broken.
+      + Open the browser developer tools and look in the console for an error message like this:
+
+          HeroesComponent.html:3 ERROR TypeError: Cannot read property 'name' of undefined
+          
+      + Now click one of the list items. The app seems to be working again. The heroes appear in a list and details about the clicked hero appear at the bottom of the page.

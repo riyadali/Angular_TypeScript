@@ -219,7 +219,7 @@ _ Master/Detail. When the user clicks a hero in the master list, the component s
              &lt;div&gt;&lt;span&gt;id: &lt;/span&gt;{{selectedHero.id}}&lt;/div&gt;
                   
              &lt;div&gt;
-                  
+               
              &lt;label&gt;name:
                       
              &lt;input&gt; [(ngModel)]="selectedHero.name" placeholder="name"&gt;
@@ -231,3 +231,5 @@ _ Master/Detail. When the user clicks a hero in the master list, the component s
              &lt;/div&gt;
               
         + After the browser refreshes, the list of names reappears. The details area is blank. Click a hero and its details appear.
+        
+    + Why it works. When selectedHero is undefined, the ngIf removes the hero detail from the DOM. There are no selectedHero bindings to worry about.  When the user picks a hero, selectedHero has a value and ngIf puts the hero detail into the DOM.

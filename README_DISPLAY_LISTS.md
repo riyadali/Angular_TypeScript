@@ -44,3 +44,4 @@ _ Displaying heroes.  You're about to display the list of heroes at the top of t
       heroes = HEROES;
       
 _ List heroes with *ngFor:
+  + aaa

@@ -51,23 +51,23 @@ _ Displaying heroes.  You're about to display the list of heroes at the top of t
       + Sprinkle some CSS classes for styling (you'll add the CSS styles shortly).
     + Make it look like this:
 
-    heroes.component.html (heroes template)
+        heroes.component.html (heroes template)
 
-      &lt;h2&gt;My Heroes&lt;/h2&gt;
+          &lt;h2&gt;My Heroes&lt;/h2&gt;
       
-      &lt;ul class="heroes"&gt;
+          &lt;ul class="heroes"&gt;
       
-       &lt;li&gt;
+          &lt;li&gt;
         
-       &lt;span class="badge">{{hero.id}}&lt;/span&gt; {{hero.name}}
+          &lt;span class="badge">{{hero.id}}&lt;/span&gt; {{hero.name}}
           
-       &lt;/li&gt;
+          &lt;/li&gt;
         
-      &lt;/ul&gt;
+          &lt;/ul&gt;
       
     + Now change the &lt;li&gt; to this:
   
-      &lt;li *ngFor="let hero of heroes"&gt;
+          &lt;li *ngFor="let hero of heroes"&gt;
       
     + The *ngFor is Angular's repeater directive. It repeats the host element for each element in a list.  In this example
 
@@ -90,7 +90,7 @@ _ Displaying heroes.  You're about to display the list of heroes at the top of t
             styleUrls: ['./heroes.component.css']
         })
         
-  + Open the heroes.component.css file and use reasonable styles as follows:
+    + Open the heroes.component.css file and use reasonable styles as follows:
   
       /* HeroesComponent's private CSS styles */
       

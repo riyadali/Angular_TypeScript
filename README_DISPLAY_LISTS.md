@@ -49,3 +49,20 @@ _ List heroes with *ngFor:
     + Below it add an HTML unordered list (&lt;ul&gt;)
     + Insert an &lt;li&gt; within the &lt;ul&gt; that displays properties of a hero.
     + Sprinkle some CSS classes for styling (you'll add the CSS styles shortly).
+  + Make it look like this:
+
+    heroes.component.html (heroes template)
+
+      &lt;h2&gt;My Heroes&lt;/h2&gt;
+      
+      &lt;ul class="heroes"&gt;
+      
+        &lt;li&gt;
+        
+          &lt;span class="badge">{{hero.id}}&lt;/span&gt; {{hero.name}}
+          
+        &lt;/li&gt;
+        
+      &lt;/ul2&gt;
+      
+  + Now change the &lt;li&gt; to this:

@@ -32,4 +32,13 @@ _ Create mock heroes.  You'll need some heroes to display. Eventually you'll get
       
     ];
     
-_ Displaying heroes
+_ Displaying heroes.  You're about to display the list of heroes at the top of the HeroesComponent.
+  + Open the HeroesComponent class file and import the mock HEROES.
+
+      src/app/heroes/heroes.component.ts (import HEROES)
+
+          import { HEROES } from '../mock-heroes';
+          
+  + Add a heroes property to the class that exposes these heroes for binding.
+
+      heroes = HEROES;

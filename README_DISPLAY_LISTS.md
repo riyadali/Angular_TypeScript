@@ -76,3 +76,18 @@ _ List heroes with *ngFor:
     + hero holds the current hero object for each iteration through the list.
     
   + Don't forget the asterisk (*) in front of ngFor. It's a critical part of the syntax.  After the browser refreshes, the list of heroes appears.
+  
+_ Style the heroes.  The heroes list should be attractive and should respond visually when users hover over and select a hero from the list. In the first tutorial, you set the basic styles for the entire application in styles.css. That stylesheet didn't include styles for this list of heroes.  You could add more styles to styles.css and keep growing that stylesheet as you add components.  You may prefer instead to define private styles for a specific component and keep everything a component needs— the code, the HTML, and the CSS —together in one place. This approach makes it easier to re-use the component somewhere else and deliver the component's intended appearance even if the global styles are different.
+
+  + You define private styles either inline in the @Component.styles array or as stylesheet file(s) identified in the @Component.styleUrls array.
+  + When the CLI generated the HeroesComponent, it created an empty heroes.component.css stylesheet for the HeroesComponent and pointed to it in @Component.styleUrls like this.
+  
+    src/app/heroes/heroes.component.ts (@Component)
+
+        @Component({
+            selector: 'app-heroes',
+            templateUrl: './heroes.component.html',
+            styleUrls: ['./heroes.component.css']
+        })
+        
+  + Open the heroes.component.css file and paste in the private CSS styles for the HeroesComponent. You'll find them in the final code review at the bottom of this guide.

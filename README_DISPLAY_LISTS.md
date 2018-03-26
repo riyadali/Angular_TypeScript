@@ -160,3 +160,5 @@ _ Style the heroes.  The heroes list should be attractive and should respond vis
         border-radius: 4px 0 0 4px;
   
     }
+    
+  + Styles and stylesheets identified in @Component metadata are scoped to that specific component. The heroes.component.css styles apply only to the HeroesComponent and don't affect the outer HTML or the HTML in any other component.

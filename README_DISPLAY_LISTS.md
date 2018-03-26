@@ -198,3 +198,24 @@ _ Master/Detail. When the user clicks a hero in the master list, the component s
           HeroesComponent.html:3 ERROR TypeError: Cannot read property 'name' of undefined
           
       + Now click one of the list items. The app seems to be working again. The heroes appear in a list and details about the clicked hero appear at the bottom of the page.
+      
+      + What happened? When the app starts, the selectedHero is undefined by design. Binding expressions in the template that refer to properties of selectedHero — expressions like {{selectedHero.name}} — must fail because there is no selected hero.
+
+      + The fix.  The component should only display the selected hero details if the selectedHero exists.
+        + Wrap the hero detail HTML in a &lt;div&gt;. Add Angular's *ngIf directive to the &lt;div&gt; and set it to selectedHero.  Don't forget the asterisk (*) in front of ngIf. It's a critical part of the syntax.
+        
+            src/app/heroes/heroes.component.html (*ngIf)
+
+              &lt;div *ngIf="selectedHero"&gt;
+
+                  &lt;h2&gt;{{ selectedHero.name | uppercase }} Details&lt;/h2&gt;
+                  &lt;div&gt;&lt;span&gt;id: &lt;/span&gt;{{selectedHero.id}}&lt;/div&gt;
+                  &lt;div&gt;
+                      &lt;label&gt;name:
+                      &lt;input&gt; [(ngModel)]="selectedHero.name" placeholder="name"&gt;
+                      &lt;/label&gt;
+                  &lt;/div&gt;
+
+              &lt;/div&gt;
+              
+        + After the browser refreshes, the list of names reappears. The details area is blank. Click a hero and its details appear.
